@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Espaço Mix — Locação para Eventos | Itarumã - GO</title>
+  <meta name="description" content="Espaço Mix em Itarumã - GO. Locação para aniversários, confraternizações e eventos especiais. Reserve pelo WhatsApp (64) 98427-9913." />
+
+  <!-- Open Graph (para compartilhar no WhatsApp/Instagram) -->
+  <meta property="og:title" content="Espaço Mix — Locação para Eventos" />
+  <meta property="og:description" content="Itarumã - GO • Ambiente amplo, reservado e versátil. Reserve pelo WhatsApp (64) 98427-9913." />
+  <!-- Troque pela sua imagem principal (URL absoluta) quando subir o site -->
+  <meta property="og:image" content="hero.jpg" />
+
+  <style>
+    :root{
+      --bg:#0b0d12;
+      --card:#121622;
+      --muted:#9aa3b2;
+      --text:#eef2ff;
+      --brand:#22c55e;
+      --brand2:#16a34a;
+      --line:rgba(255,255,255,.08);
+      --shadow: 0 18px 50px rgba(0,0,0,.45);
+      --radius: 18px;
+      --max: 1100px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1000px 600px at 20% -10%, rgba(34,197,94,.18), transparent 60%),
+                  radial-gradient(900px 500px at 90% 0%, rgba(59,130,246,.14), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max); margin:0 auto; padding:0 18px}
+    .nav{
+      position:sticky; top:0; z-index:20;
+      background: rgba(11,13,18,.72);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.3px;
+    }
+    .badge{
+      font-size:12px; color:var(--muted);
+      border:1px solid var(--line);
+      padding:6px 10px; border-radius:999px;
+    }
+    .nav-links{
+      display:flex; gap:14px; align-items:center; flex-wrap:wrap;
+    }
+    .nav-links a{
+      color:var(--muted); font-size:14px;
+      padding:8px 10px; border-radius:10px;
+    }
+    .nav-links a:hover{background:rgba(255,255,255,.06); color:var(--text)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      border:none;
+      cursor:pointer;
+      padding:12px 16px;
+      border-radius:14px;
+      font-weight:700;
+      transition:.18s transform, .18s filter, .18s background;
+      white-space:nowrap;
+    }
+    .btn:active{transform:translateY(1px)}
+    .btn-primary{background:linear-gradient(135deg, var(--brand), var(--brand2)); color:#05210f}
+    .btn-primary:hover{filter:brightness(1.05)}
+    .btn-ghost{
+      background:rgba(255,255,255,.06); color:var(--text);
+      border:1px solid var(--line);
+    }
+    .btn-ghost:hover{background:rgba(255,255,255,.09)}
+    .hero{
+      padding:44px 0 18px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 920px){
+      .hero-grid{grid-template-columns:1fr}
+    }
+    .hero-card{
+      background: rgba(18,22,34,.78);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .hero-copy{padding:26px}
+    .kicker{color:var(--muted); font-weight:600; font-size:14px}
+    h1{margin:10px 0 10px; font-size:42px; line-height:1.12}
+    @media (max-width: 520px){h1{font-size:34px}}
+    .lead{color:#d7def2; font-size:16px; margin:0 0 18px}
+    .cta-row{display:flex; gap:10px; flex-wrap:wrap}
+    .proof{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      margin-top:18px;
+    }
+    @media (max-width: 520px){.proof{grid-template-columns:1fr}}
+    .pill{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      border-radius: 14px;
+      padding:12px 12px;
+      color: var(--muted);
+      font-size:13px;
+    }
+    .hero-media{
+      display:grid;
+      grid-template-rows: 1fr auto;
+      min-height: 420px;
+    }
+    .hero-img{
+      position:relative;
+      background:#0f1422;
+      min-height: 340px;
+    }
+    .hero-img img{
+      width:100%; height:100%;
+      object-fit:cover;
+      display:block;
+      filter:saturate(1.05) contrast(1.03);
+    }
+    .hero-overlay{
+      position:absolute; inset:auto 14px 14px 14px;
+      padding:12px 14px;
+      border-radius: 14px;
+      background: rgba(11,13,18,.62);
+      border:1px solid var(--line);
+      color: #e9efff;
+      font-weight:700;
+      backdrop-filter: blur(10px);
+    }
+    .contact-card{
+      padding:14px;
+      border-top:1px solid var(--line);
+      display:flex; gap:10px; align-items:center; justify-content:space-between;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .section{padding:34px 0}
+    .section h2{
+      margin:0 0 10px;
+      font-size:26px;
+    }
+    .section p{margin:0 0 14px; color:#d5dbf0}
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    @media (max-width: 900px){.grid-3{grid-template-columns:1fr}}
+    .card{
+      background: rgba(18,22,34,.65);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding:16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    .card h3{margin:0 0 6px; font-size:16px}
+    .card p{margin:0; color:var(--muted); font-size:14px}
+    .list{
+      display:grid; gap:10px;
+      margin: 10px 0 0;
+      padding:0;
+      list-style:none;
+    }
+    .list li{
+      display:flex; gap:10px; align-items:flex-start;
+      color:#d6dcf2;
+      background: rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      padding:12px;
+      border-radius: 14px;
+    }
+    .list b{display:block}
+    .muted{color:var(--muted)}
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:10px;
+    }
+    .g-item{
+      border-radius: 16px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:#0f1422;
+      cursor:pointer;
+      position:relative;
+      min-height:160px;
+    }
+    .g-item img{
+      width:100%; height:100%;
+      object-fit:cover;
+      display:block;
+      transform:scale(1);
+      transition: .22s transform;
+    }
+    .g-item:hover img{transform:scale(1.03)}
+    .span-6{grid-column: span 6}
+    .span-4{grid-column: span 4}
+    .span-8{grid-column: span 8}
+    @media (max-width: 900px){
+      .span-6,.span-4,.span-8{grid-column: span 12}
+      .g-item{min-height:220px}
+    }
+
+    .faq details{
+      background: rgba(18,22,34,.65);
+      border:1px solid var(--line);
+      border-radius: 16px;
+      padding:12px 14px;
+      margin-bottom:10px;
+    }
+    .faq summary{
+      cursor:pointer;
+      font-weight:800;
+    }
+    .faq p{margin:8px 0 0; color:var(--muted)}
+    .footer{
+      border-top:1px solid var(--line);
+      padding:22px 0 32px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .footer .row{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
+
+    /* Modal / Lightbox */
+    .modal{
+      position:fixed; inset:0;
+      background: rgba(0,0,0,.72);
+      display:none; align-items:center; justify-content:center;
+      padding:18px;
+      z-index:50;
+    }
+    .modal.open{display:flex}
+    .modal-inner{
+      max-width: 980px; width:100%;
+      background: rgba(18,22,34,.9);
+      border:1px solid var(--line);
+      border-radius: 18px;
+      overflow:hidden;
+      box-shadow: var(--shadow);
+    }
+    .modal-head{
+      display:flex; justify-content:space-between; align-items:center;
+      padding:10px 12px;
+      border-bottom:1px solid var(--line);
+      color:var(--muted);
+      font-size:14px;
+    }
+    .modal-close{
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      border-radius: 12px;
+      padding:8px 10px;
+      cursor:pointer;
+      color:var(--text);
+      font-weight:800;
+    }
+    .modal-body img{width:100%; height:auto; display:block}
+    /* Small form */
+    .form{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      margin-top:12px;
+    }
+    @media (max-width: 720px){.form{grid-template-columns:1fr}}
+    .input{
+      width:100%;
+      padding:12px 12px;
+      border-radius: 14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      outline:none;
+    }
+    .input::placeholder{color: rgba(154,163,178,.85)}
+    .form .btn{width:100%}
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <div class="brand">
+          <span style="font-size:18px">✨ Espaço Mix</span>
+          <span class="badge">Itarumã - GO</span>
+        </div>
+        <nav class="nav-links">
+          <a href="#estrutura">Estrutura</a>
+          <a href="#fotos">Fotos</a>
+          <a href="#como-reservar">Reservar</a>
+          <a href="#faq">Dúvidas</a>
+          <a class="btn btn-primary" href="https://wa.me/5564984279913" target="_blank" rel="noopener">
+            WhatsApp
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-card">
+          <div class="hero-copy">
+            <div class="kicker">Locação para festas • aniversários • confraternizações</div>
+            <h1>Seu evento merece um espaço bonito, reservado e inesquecível.</h1>
+            <p class="lead">
+              O <b>Espaço Mix</b> foi feito para você celebrar do seu jeito — com conforto, liberdade e um ambiente que
+              valoriza a decoração e as fotos do seu momento.
+            </p>
+
+            <div class="cta-row">
+              <a class="btn btn-primary" href="https://wa.me/5564984279913" target="_blank" rel="noopener">
+                ✅ Consultar disponibilidade
+              </a>
+              <a class="btn btn-ghost" href="#fotos">📸 Ver fotos do espaço</a>
+            </div>
+
+            <div class="proof">
+              <div class="pill">✅ Ambiente amplo e privativo</div>
+              <div class="pill">✅ Versátil: infantil, adulto e família</div>
+              <div class="pill">✅ Espaço ideal para decoração</div>
+              <div class="pill">✅ Atendimento rápido no WhatsApp</div>
+            </div>
+
+            <div class="form" id="como-reservar">
+              <input class="input" id="data" placeholder="Data desejada (ex: 20/02/2026)" />
+              <input class="input" id="tipo" placeholder="Tipo de evento (ex: aniversário)" />
+              <input class="input" id="pessoas" placeholder="Qtd. de pessoas (ex: 40)" />
+              <button class="btn btn-primary" id="btnOrcamento" type="button">
+                📲 Pedir orçamento no WhatsApp
+              </button>
+            </div>
+
+            <p class="muted" style="margin-top:10px">
+              📍 Itarumã - GO • WhatsApp: <b>(64) 98427-9913</b>
+            </p>
+          </div>
+        </div>
+
+        <div class="hero-card hero-media">
+          <div class="hero-img">
+            <!-- Troque o arquivo abaixo pela sua foto principal -->
+            <img src="hero.jpg" alt="Espaço Mix - Área principal" />
+            <div class="hero-overlay">✨ O lugar ideal para seus melhores momentos</div>
+          </div>
+          <div class="contact-card">
+            <div>
+              <div><b>Reserva:</b> (64) 98427-9913</div>
+              <div class="muted">Clique e fale agora no WhatsApp</div>
+            </div>
+            <a class="btn btn-primary" href="https://wa.me/5564984279913" target="_blank" rel="noopener">Chamar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFÍCIOS -->
+  <section class="section" id="estrutura">
+    <div class="container">
+      <h2>Por que escolher o Espaço Mix?</h2>
+      <p>Porque aqui o seu evento flui fácil: você chega, organiza, decora e curte. O ambiente já entrega o clima perfeito.</p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>✅ Privacidade e conforto</h3>
+          <p>Ambiente reservado para você receber seus convidados com tranquilidade.</p>
+        </div>
+        <div class="card">
+          <h3>✅ Versátil para vários eventos</h3>
+          <p>Funciona muito bem para aniversários, confraternizações, reuniões de família e eventos especiais.</p>
+        </div>
+        <div class="card">
+          <h3>✅ Espaço que valoriza a decoração</h3>
+          <p>Perfeito para montar cenários, mesas, painéis e criar fotos lindas do seu momento.</p>
+        </div>
+      </div>
+
+      <ul class="list" style="margin-top:14px">
+        <li><span>🍽️</span><div><b>Área para mesas e convidados</b><span class="muted">Ampla circulação e conforto.</span></div></li>
+        <li><span>🔥</span><div><b>Área de apoio para comidas</b><span class="muted">Ideal para churrasco, coffee break ou buffet.</span></div></li>
+        <li><span>📸</span><div><b>Ambiente bonito para fotos</b><span class="muted">Sua festa fica mais “instagramável”.</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section class="section" id="fotos">
+    <div class="container">
+      <h2>Fotos do Espaço Mix</h2>
+      <p>Clique nas imagens para ampliar. (Troque os arquivos pelos seus: <span class="muted">foto1.jpg, foto2.jpg...</span>)</p>
+
+      <div class="gallery">
+        <div class="g-item span-8" data-src="foto1.jpg"><img src="foto1.jpg" alt="Espaço Mix - Visão ampla" /></div>
+        <div class="g-item span-4" data-src="foto2.jpg"><img src="foto2.jpg" alt="Espaço Mix - Área coberta" /></div>
+        <div class="g-item span-6" data-src="foto3.jpg"><img src="foto3.jpg" alt="Espaço Mix - Detalhes" /></div>
+        <div class="g-item span-6" data-src="foto4.jpg"><img src="foto4.jpg" alt="Espaço Mix - Evento decorado" /></div>
+      </div>
+
+      <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
+        <a class="btn btn-primary" href="https://wa.me/5564984279913" target="_blank" rel="noopener">✅ Ver datas disponíveis</a>
+        <a class="btn btn-ghost" href="#faq">Tirar dúvidas</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUAIS EVENTOS -->
+  <section class="section">
+    <div class="container">
+      <h2>Perfeito para</h2>
+      <div class="grid-3">
+        <div class="card"><h3>🎂 Aniversários</h3><p>Infantil ou adulto, com decoração do seu jeito.</p></div>
+        <div class="card"><h3>🥂 Confraternizações</h3><p>Reúna amigos, família ou equipe em um ambiente acolhedor.</p></div>
+        <div class="card"><h3>🎉 Eventos especiais</h3><p>Comemorações, encontros e datas marcantes.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVA / URGÊNCIA -->
+  <section class="section">
+    <div class="container">
+      <div class="card" style="padding:18px">
+        <h2 style="margin-bottom:8px">Datas concorridas nos fins de semana</h2>
+        <p>Se você já tem uma data em mente, chame agora e eu te passo <b>disponibilidade + valores + regras</b>.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://wa.me/5564984279913" target="_blank" rel="noopener">📲 Consultar no WhatsApp</a>
+          <a class="btn btn-ghost" href="#fotos">📸 Ver fotos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <h2>Dúvidas frequentes</h2>
+
+      <div class="faq">
+        <details>
+          <summary>Como faço para reservar?</summary>
+          <p>Chame no WhatsApp, informe a data, e após confirmar disponibilidade você garante com o sinal.</p>
+        </details>
+
+        <details>
+          <summary>Posso levar comida e bebida?</summary>
+          <p>Geralmente sim. Confirme os detalhes e regras no WhatsApp.</p>
+        </details>
+
+        <details>
+          <summary>Tem horário de início e término?</summary>
+          <p>Sim. Os horários e regras são passados no atendimento conforme o dia e tipo de evento.</p>
+        </details>
+
+        <details>
+          <summary>Posso usar som?</summary>
+          <p>Pode, seguindo regras de bom senso e horários. Confirme no atendimento.</p>
+        </details>
+      </div>
+
+      <a class="btn btn-primary" href="https://wa.me/5564984279913" target="_blank" rel="noopener" style="margin-top:10px">
+        ✅ Falar agora e reservar
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div>
+          <b>Espaço Mix</b> — Itarumã / GO<br />
+          WhatsApp: <b>(64) 98427-9913</b>
+        </div>
+        <div class="muted">
+          © <span id="year"></span> Espaço Mix. Todos os direitos reservados.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-inner">
+      <div class="modal-head">
+        <div>📸 Espaço Mix — Visualização</div>
+        <button class="modal-close" id="closeModal">Fechar ✕</button>
+      </div>
+      <div class="modal-body">
+        <img id="modalImg" src="" alt="Imagem ampliada" />
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Ano no rodapé
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Lightbox simples
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modalImg");
+    const closeModal = document.getElementById("closeModal");
+
+    document.querySelectorAll(".g-item").forEach(item => {
+      item.addEventListener("click", () => {
+        const src = item.getAttribute("data-src");
+        modalImg.src = src;
+        modal.classList.add("open");
+      });
+    });
+
+    const close = () => {
+      modal.classList.remove("open");
+      modalImg.src = "";
+    };
+
+    closeModal.addEventListener("click", close);
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) close();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") close();
+    });
+
+    // Botão "Pedir orçamento" -> WhatsApp com mensagem pronta
+    const btn = document.getElementById("btnOrcamento");
+    btn.addEventListener("click", () => {
+      const data = document.getElementById("data").value.trim();
+      const tipo = document.getElementById("tipo").value.trim();
+      const pessoas = document.getElementById("pessoas").value.trim();
+
+      const msgBase = [
+        "Olá! Quero alugar o Espaço Mix em Itarumã - GO.",
+        data ? `Data desejada: ${data}.` : "",
+        tipo ? `Tipo de evento: ${tipo}.` : "",
+        pessoas ? `Quantidade de pessoas: ${pessoas}.` : "",
+        "Pode me enviar disponibilidade e valores, por favor?"
+      ].filter(Boolean).join(" ");
+
+      const url = "https://wa.me/5564984279913?text=" + encodeURIComponent(msgBase);
+      window.open(url, "_blank", "noopener");
+    });
+  </script>
+</body>
+</html>
